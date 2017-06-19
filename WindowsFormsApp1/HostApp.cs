@@ -45,18 +45,29 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.flashTrackBar1 = new FlashTrackBar();
-            this.Text = "Control Example";
+            this.flashTrackBar1 = new FlashTrackBarControlLibrary.FlashTrackBar();
+            this.SuspendLayout();
+            // 
+            // flashTrackBar1
+            // 
+            this.flashTrackBar1.BackColor = System.Drawing.Color.Black;
+            this.flashTrackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flashTrackBar1.ForeColor = System.Drawing.Color.White;
+            this.flashTrackBar1.Location = new System.Drawing.Point(0, 0);
+            this.flashTrackBar1.Name = "flashTrackBar1";
+            this.flashTrackBar1.Size = new System.Drawing.Size(600, 450);
+            this.flashTrackBar1.TabIndex = 0;
+            this.flashTrackBar1.Text = "Drag the Mouse and say Wow!";
+            this.flashTrackBar1.Value = 52;
+            // 
+            // HostApp
+            // 
             this.ClientSize = new System.Drawing.Size(600, 450);
-            flashTrackBar1.BackColor = System.Drawing.Color.Black;
-            flashTrackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            flashTrackBar1.TabIndex = 0;
-            flashTrackBar1.ForeColor = System.Drawing.Color.White;
-            flashTrackBar1.Text = "Drag the Mouse and say Wow!";
-            flashTrackBar1.Value = 73;
-            flashTrackBar1.Size = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.flashTrackBar1);
+            this.Name = "HostApp";
+            this.Text = "Control Example";
+            this.ResumeLayout(false);
+
         }
     }
 }

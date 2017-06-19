@@ -10,12 +10,12 @@
     using System.Windows.Forms.Design;
 
     [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
-    public class FlashTrackBar : System.Windows.Forms.Control
+    public class FlashTrackBar : Control
     {
         /// <summary>
         ///    Required designer variable.
         /// </summary>
-        private System.ComponentModel.Container components;
+        private Container components;
 
         private const int LeftRightBorder = 10;
         private int value = 0;
@@ -68,17 +68,14 @@
         /// </summary>
         void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.ForeColor = System.Drawing.Color.White;
-            this.BackColor = System.Drawing.Color.Black;
-            this.Size = new System.Drawing.Size(100, 23);
+            this.components = new Container();
+            this.ForeColor = Color.White;
+            this.BackColor = Color.Black;
+            this.Size = new Size(100, 23);
             this.Text = "FlashTrackBar";
         }
 
-        [
-            Category("Flash"),
-            DefaultValue(true)
-        ]
+        [Category("Flash"), DefaultValue(true)]
         public bool AllowUserEdit
         {
             get
@@ -99,9 +96,7 @@
             }
         }
 
-        [
-            Category("Flash")
-        ]
+        [Category("Flash")]
         public Color EndColor
         {
             get
@@ -126,11 +121,7 @@
         }
 
 
-        [
-            Category("Flash"),
-            Editor(typeof(FlashTrackBarDarkenByEditor), typeof(UITypeEditor)),
-            DefaultValue((byte)200)
-        ]
+        [Category("Flash"), Editor(typeof(FlashTrackBarDarkenByEditor), typeof(UITypeEditor)), DefaultValue((byte)200)]
         public byte DarkenBy
         {
             get
@@ -152,10 +143,7 @@
             }
         }
 
-        [
-            Category("Flash"),
-            DefaultValue(100)
-        ]
+        [Category("Flash"), DefaultValue(100)]
         public int Max
         {
             get
@@ -172,10 +160,7 @@
             }
         }
 
-        [
-            Category("Flash"),
-            DefaultValue(0)
-        ]
+        [Category("Flash"), DefaultValue(0)]
         public int Min
         {
             get
@@ -192,9 +177,7 @@
             }
         }
 
-        [
-            Category("Flash")
-        ]
+        [Category("Flash")]
         public Color StartColor
         {
             get
@@ -218,13 +201,7 @@
             return !(startColor == Color.Red);
         }
 
-
-
-        [
-            Category("Flash"),
-            RefreshProperties(RefreshProperties.Repaint),
-            DefaultValue(false)
-        ]
+        [Category("Flash"), RefreshProperties(RefreshProperties.Repaint),DefaultValue(false)]
         public bool ShowPercentage
         {
             get
@@ -245,11 +222,7 @@
             }
         }
 
-        [
-            Category("Flash"),
-            RefreshProperties(RefreshProperties.Repaint),
-            DefaultValue(false)
-        ]
+        [Category("Flash"), RefreshProperties(RefreshProperties.Repaint), DefaultValue(false)]
         public bool ShowValue
         {
             get
@@ -270,10 +243,7 @@
             }
         }
 
-        [
-            Category("Flash"),
-            DefaultValue(true)
-        ]
+        [Category("Flash"), DefaultValue(true)]
         public bool ShowGradient
         {
             get
@@ -295,11 +265,7 @@
             }
         }
 
-        [
-            Category("Flash"),
-            Editor(typeof(FlashTrackBarValueEditor), typeof(UITypeEditor)),
-            DefaultValue(0)
-        ]
+        [Category("Flash"), Editor(typeof(FlashTrackBarValueEditor), typeof(UITypeEditor)),DefaultValue(0)]
         public int Value
         {
             get

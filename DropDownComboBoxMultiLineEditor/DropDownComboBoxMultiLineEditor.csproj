@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F17F416-B1BE-42F7-9B9E-38EE5B8C3C48}</ProjectGuid>
+    <ProjectGuid>{D3F566BC-17DF-4CAC-9132-9AEF2D4E96B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>DropDownComboBoxMultiLineEditor</RootNamespace>
+    <AssemblyName>DropDownComboBoxMultiLineEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Syncfusion.Edit.Windows, Version=14.4400.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MineMarket\BulkTrak\Source\Lib\Syncfusion.Edit.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="syncfusion.shared.base, Version=14.4400.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MineMarket\BulkTrak\Source\Lib\syncfusion.shared.base.dll</HintPath>
+    </Reference>
+    <Reference Include="syncfusion.shared.windows, Version=14.4400.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MineMarket\BulkTrak\Source\Lib\syncfusion.shared.windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=14.4400.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MineMarket\BulkTrak\Source\Lib\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=14.4400.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MineMarket\BulkTrak\Source\Lib\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,25 +66,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="HostApp.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReattachableBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReattachableBaseForm.Designer.cs">
+      <DependentUpon>ReattachableBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResizeableDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResizeableDropDownForm.Designer.cs">
+      <DependentUpon>ResizeableDropDownForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HostApp.resx">
-      <DependentUpon>HostApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,6 +97,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,13 +113,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FlashTrackBarControlLibrary\FlashTrackBarControlLibrary.csproj">
-      <Project>{76b331b4-f1a2-4a09-b4a0-581131be43c1}</Project>
-      <Name>FlashTrackBarControlLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MarqueeControlLibrary\MarqueeControlLibrary.csproj">
-      <Project>{62dfe04c-5b27-41a7-9a20-420a30375fe4}</Project>
-      <Name>MarqueeControlLibrary</Name>
+    <ProjectReference Include="..\TextBoxExt\ExtControlLib.csproj">
+      <Project>{afba8373-c296-4f42-8d5d-e7c28bdc03e3}</Project>
+      <Name>ExtControlLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
