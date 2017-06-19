@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostApp.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +83,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlashTrackBarControlLibrary\FlashTrackBarControlLibrary.csproj">
+      <Project>{76b331b4-f1a2-4a09-b4a0-581131be43c1}</Project>
+      <Name>FlashTrackBarControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarqueeControlLibrary\MarqueeControlLibrary.csproj">
+      <Project>{62dfe04c-5b27-41a7-9a20-420a30375fe4}</Project>
+      <Name>MarqueeControlLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

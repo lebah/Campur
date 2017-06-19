@@ -19,6 +19,19 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();            ;
             InitPropertyGrid();
+            InitMarqueeControl();
+        }
+
+        private void InitMarqueeControl()
+        {
+            MarqueeControlLibrary.MarqueeControl marqueeControl = new MarqueeControlLibrary.MarqueeControl();
+            MarqueeControlLibrary.MarqueeText marqueeText = new MarqueeControlLibrary.MarqueeText();
+            MarqueeControlLibrary.MarqueeBorder marqueeBorder = new MarqueeControlLibrary.MarqueeBorder();
+            //MarqueeControlLibrary.LightShapeSelectionControl mLightShapeSelectionControl = new MarqueeControlLibrary.LightShapeSelectionControl(MarqueeControlLibrary.MarqueeLightShape.Circle, )
+
+            
+
+
         }
 
         private void InitPropertyGrid()
@@ -33,10 +46,13 @@ namespace WindowsFormsApp1
             propertyGrid1.Text = "Property Grid";
             propertyGrid1.Dock = DockStyle.Right;
             propertyGrid1.PropertyTabs.AddTabType(typeof(TypeCategoryTab));
+            propertyGrid1.LargeButtons = true;
 
             this.tabPage2.Controls.Add(propertyGrid1);
 
             propertyGrid1.SelectedObject = textBox2;
+
+            textBox2.Text = propertyGrid1.LargeButtons.ToString();
         }
 
         private void DisplayTypeInfo()
