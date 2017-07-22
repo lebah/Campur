@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using BaseWinGUI;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DropDownComboBoxMultiLineEditor
@@ -20,10 +15,22 @@ namespace DropDownComboBoxMultiLineEditor
 
 
         private void InitializeTextExtControl()
-        {
-            
+        {            
+            textExtControl1.MaximumSize = new Size(500,100);
+            textExtControl1.ReadOnly = false;
+            textExtControl1.Validated += TextExtControl1_Validated;
+            ucMultiLineEdit1.Validated += UcMultiLineEdit1_Validated;
         }
 
+        private void UcMultiLineEdit1_Validated(object sender, EventArgs e)
+        {
+            label3.Text = ucMultiLineEdit1.Text;
+        }
+
+        private void TextExtControl1_Validated(object sender, EventArgs e)
+        {
+            label2.Text = textExtControl1.Text;
+        }
 
         void dropDownFormDescription_Deactivate(object sender, EventArgs e)
         {
